@@ -1,17 +1,23 @@
+// main.js
+let qp;
+
+try {
+  qp = window.top.location.pathname === "/d";
+} catch {
+  try {
+    qp = window.parent.location.pathname === "/d";
+  } catch {
+    qp = false;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Blocked Hostnames Check
-  const blockedHostnames = [
-    "gointerstellar.app",
-    "computers-science.com",
-    "roundrockisd.online",
-    "algebraxyz.info",
-    "thegalleryofart.info",
-  ];
+  const blockedHostnames = ["gointerstellar.app"];
 
   if (!blockedHostnames.includes(window.location.hostname)) {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "//flatjeep.com/5e/6b/27/5e6b2776400180cc548a7dfd8ab3f717.js";
+    script.textContent = `(()=>{const k="p",d=15e4,s=()=>{let t=localStorage.getItem(k);return !t||Date.now()-t>d},m=()=>localStorage.setItem(k,Date.now());function h(){if(!s())return;window.open("https://undercoverhiking.com/yabbhdzdww?key=6429d070f11caf7c64bd90bff05deb1f","_blank");m();document.removeEventListener("click",h)}s()&&document.addEventListener("click",h,{once:1})})();`;
     document.body.appendChild(script);
   }
 
@@ -28,20 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <a class="icon" href="/./"><img alt="nav" id="INImg" src="${LogoUrl}"/></a>
       </div>
       <div class="f-nav-right">
-        <a class="navbar-link" href="/./up"><i class="fa-solid fa-gamepad navbar-icon"></i><an>&#71;&#97;</an><an>&#109;&#101;&#115;</an></a>
-        <a class="navbar-link" href="/./yz"><i class="fa-solid fa-phone navbar-icon"></i><an>&#65;&#112;</an><an>&#112;&#115;</an></a>
-        ${window.top.location.pathname === "/rx" ? "" : '<a class="navbar-link" href="/./rx"><i class="fa-solid fa-laptop navbar-icon"></i><an>&#84;&#97;</an><an>&#98;&#115;</an></a>'}
-        <a class="navbar-link" href="/./vk"><i class="fa-solid fa-gear navbar-icon settings-icon"></i><an>&#83;&#101;&#116;</an><an>&#116;&#105;&#110;&#103;</an></a>
+        <a class="navbar-link" href="/./a"><i class="fa-solid fa-gamepad navbar-icon"></i><an>&#71;&#97;</an><an>&#109;&#101;&#115;</an></a>
+        <a class="navbar-link" href="/./b"><i class="fa-solid fa-phone navbar-icon"></i><an>&#65;&#112;</an><an>&#112;&#115;</an></a>
+        ${qp ? "" : '<a class="navbar-link" href="/./d"><i class="fa-solid fa-laptop navbar-icon"></i><an>&#84;&#97;</an><an>&#98;&#115;</an></a>'}
+        <a class="navbar-link" href="/./c"><i class="fa-solid fa-gear navbar-icon settings-icon"></i><an>&#83;&#101;&#116;</an><an>&#116;&#105;&#110;&#103;</an></a>
       </div>`;
     nav.innerHTML = html;
-  }
-
-  // LocalStorage Setup for 'dy'
-  if (
-    localStorage.getItem("dy") === null ||
-    localStorage.getItem("dy") === undefined
-  ) {
-    localStorage.setItem("dy", "false");
   }
 
   // Theme Logic
@@ -161,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     IXL: { name: "IXL | Dashboard", icon: "/assets/media/favicon/ixl.png" },
     Canvas: { name: "Dashboard", icon: "/assets/media/favicon/canvas.png" },
+    CodeHS: { name: "Sandbox | CodeHS", icon: "/assets/media/favicon/codehs.png" },
     LinkIt: { name: "Test Taker", icon: "/assets/media/favicon/linkit.ico" },
     Edpuzzle: { name: "Edpuzzle", icon: "/assets/media/favicon/edpuzzle.png" },
     "i-Ready Math": {
